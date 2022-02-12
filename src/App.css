@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+body{
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-pic{
+  
+  height:350px;
+  width:250px;
+  object-fit: cover;
 }
+.movie-container{
+  
+  width:250px;
+  border-radius: 10px;
+  overflow: hidden;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.movie-specs
+{
+  display:flex;
   align-items: center;
+  justify-content: space-between;
+}
+.movie-name{
+  font-size: 24px;
+  margin: 0px;
+}
+.rating
+{
+  font-size: 18px;
+}
+.movie-list{
+  display:flex;
+  gap:24px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.counter-container{
+  display:flex;
+  gap:10px;
+}
+.likes-dislikes{
+  font-size: 20px;
+  margin-top: 5px;
+}
+.movie-show-button{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.add-color-form{
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 250px;
+}
+.add-movie-form{
+  margin:20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  
+
+}
+
+nav{
+  font-size: 28px;
+  display: flex;
+  gap:24px;
+  margin:20px;
+  
+}
+
+
+.not-found-container{
+  text-align: center;
+  color: teal;
+}
+.not-found-image{
+  width: 100%;
+  object-fit: cover;
+}
+.movie-detail-container{
+  padding:24px;
+  max-width:50rem;
+}
+.game-box{
+  background-color: white;
+  color:black;
+  height: 8rem;
+  width: 8rem;
+  font-size: 8rem;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid black;
   }
-  to {
-    transform: rotate(360deg);
+  .board{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    width: min-content;
   }
-}
+  .full-game{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
