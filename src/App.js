@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import { MovieList } from './MovieList';
-import Paper from '@mui/material/Paper';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
 import {Route,Switch,Redirect} from 'react-router-dom';
 import { NotFound } from './NotFound';
 import  Login  from './Login';
@@ -17,7 +14,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import { useHistory} from "react-router-dom";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 
 
@@ -25,25 +22,15 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 export default function App() {
  
   
-   
+   const [shownavbar,setshowNavbar]=useState(false);
   const history=useHistory();
-  const [mode,setMode]=useState("dark");
-
-  const theme = createTheme({
-    palette: {
-      mode: mode,
-    },
-  });
-
  
 
-  
-  return (
+return (
     
-    <ThemeProvider theme={theme}>
-      <Paper elevation={4} style={{bordeRadius:"0px",minHeight:"100vh"}} >
+
      <div className="App">
-       <AppBar position="static" style={{marginBottom:"24px"}}>
+       {shownavbar?<AppBar position="static" style={{marginBottom:"24px"}}>
      <Toolbar variant="dence">
       <Button
        variant="text"
@@ -61,19 +48,13 @@ export default function App() {
        onClick={()=>history.push("/add-movies")}
        >AddMovie</Button>
        
-        <Button 
-        startIcon={mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-        style={{ marginLeft:"auto" }}
-       variant="text"
-       color="inherit"
-       onClick={()=>setMode(mode==="light" ? "dark" : "light")}
-       >{ mode==="light" ? "dark" : "light" } Mode</Button>
+       
      </Toolbar>
-       </AppBar>
+       </AppBar>:""}
        <Switch>
        
        <Route path="/login">
-           <Login  />
+           <Login  setshowNavbar={setshowNavbar}/>
            </Route>
            <Route path="/sign-up">
            <SignUp  />
@@ -81,7 +62,7 @@ export default function App() {
            <Route path="/forgot-password">
            <ForgetPassword  />
            </Route>
-           <Route path="/reset-password">
+           <Route path="/reset-password/:id">
            <ResetPassword  />
            </Route>
            <Route path="/films">
@@ -105,8 +86,7 @@ export default function App() {
            
         </Switch>
    </div>
-    </Paper>
-   </ThemeProvider>
+    
     
   );
 }

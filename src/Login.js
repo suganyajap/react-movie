@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
- import "./Login.css";
+import "./Login.css";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useFormik } from "formik";
@@ -8,7 +8,7 @@ import { ErrorMessage } from "./Utils.js"
 import { API_URL } from "./global-constants"
 
 
-function Login() {
+function Login({setshowNavbar}) {
     let history = useHistory();               
     let [error, setError] = useState(null)      
 
@@ -47,7 +47,8 @@ function Login() {
                 setError(data.message)
                 if (data.message === "Success") {
                     localStorage.setItem('token', data.token);
-                    return history.push('/MovieList')
+                     history.push('/movies');
+                     setshowNavbar(true);
                 }
 
             })

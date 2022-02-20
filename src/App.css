@@ -84,27 +84,3 @@ nav{
   padding:24px;
   max-width:50rem;
 }
-.game-box{
-  background-color: white;
-  color:black;
-  height: 8rem;
-  width: 8rem;
-  font-size: 8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border: 1px solid black;
-  }
-  .board{
-    display: grid;
-    grid-template-columns:repeat(3,1fr);
-    width: min-content;
-  }
-  .full-game{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
