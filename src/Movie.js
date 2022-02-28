@@ -6,12 +6,12 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import IconButton from '@mui/material/IconButton';
-import InfoIcon from '@mui/icons-material/Info';
-import { useHistory } from 'react-router-dom';
+
+
 
 
 export function Movie({ name, poster, rating, summary,id ,deleteButton,editButton}) {
-  const history=useHistory();
+
   const [show, setShow] = useState(true);
   const styles = { color: rating < 7 ? "crimson" : "green", fontWeight: "bold", };
   const summaryStyles = {
@@ -23,7 +23,7 @@ export function Movie({ name, poster, rating, summary,id ,deleteButton,editButto
       <CardContent>
       <div className="movie-specs">
         <h3 className="movie-name">{name}
-        <IconButton 
+        {/* <IconButton 
         className="movie-show-button" 
         onClick={() => {
           console.log(id);
@@ -32,7 +32,7 @@ export function Movie({ name, poster, rating, summary,id ,deleteButton,editButto
         color="primary" 
         aria-label="more info" >
           <InfoIcon />
-        </IconButton>
+        </IconButton> */}
        
         
 

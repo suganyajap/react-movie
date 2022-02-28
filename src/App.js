@@ -7,7 +7,6 @@ import  Login  from './Login';
 import  SignUp  from './SignUp';
 import  ForgetPassword  from './ForgotPassword';
 import  ResetPassword  from './ResetPassword';
-import { MovieDetails } from './MovieDetails';
 import { AddMovie } from './AddMovie';
 import { EditMovie } from './EditMovie';
 import AppBar from '@mui/material/AppBar';
@@ -56,6 +55,9 @@ return (
        <Route path="/login">
            <Login  setshowNavbar={setshowNavbar}/>
            </Route>
+           <Route exact path="/">
+           <Redirect to="/login" />
+           </Route>
            <Route path="/sign-up">
            <SignUp  />
            </Route>
@@ -71,9 +73,9 @@ return (
            <Route path="/movies/edit/:id">
            <EditMovie  />
            </Route>
-           <Route path="/movies/:id">
+           {/* <Route path="/movies/:id">
            <MovieDetails />
-           </Route>
+           </Route> */}
            <Route path="/movies">
            <MovieList />
            </Route>
